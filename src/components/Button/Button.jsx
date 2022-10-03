@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,8 +13,8 @@ const ButtonBootstrap = ({ onClick }) => {
   );
 };
 
-ButtonBootstrap.propTypes = {
-  onClick: PropTypes.func.isRequired,
-};
+// ButtonBootstrap.propTypes = {
+//   onClick: PropTypes.func.isRequired,
+// };
 
 export default ButtonBootstrap;

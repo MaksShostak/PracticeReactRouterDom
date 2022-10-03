@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { useNavigate } from 'react-router-dom';
 
 import style from './Searchbar.module.css';
 
-const Searchbar = ({ onSubmit, inSubmiting }) => {
+const Searchbar = () => {
   const [inputValue, setInputValue] = useState('');
-
+  const navigate = useNavigate();
   const handleInputChange = event => {
     const { value } = event.currentTarget;
     setInputValue(value.toLowerCase());
@@ -28,14 +29,14 @@ const Searchbar = ({ onSubmit, inSubmiting }) => {
         clickToClose: true,
       });
     }
-    onSubmit(inputValue);
+    navigate(`/image/${inputValue}`);
     resetInput();
   };
 
   return (
     <header className={style.searchbar}>
       <form className={style.form} onSubmit={handleSubmit}>
-        <button type="submit" className={style.button} disabled={inSubmiting}>
+        <button type="submit" className={style.button}>
           <span className={style.buttonLabel}>Search</span>
         </button>
 
